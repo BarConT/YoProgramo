@@ -10,8 +10,6 @@
     margin: 20px;
     border: solid 1px #CFCFCF;
     border-radius: 20px;
-    font-size: 26px;
-    font-weight: 600;
 }
 
 .contenido {
@@ -21,7 +19,32 @@
     border: solid 1px #CFCFCF;
     border-radius: 20px;
     font-size: 18px;
+    font-weight: 600;
+}
+
+.tituloNombre {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.tituloSecundario {
+    font-size: 24px;
     font-weight: 300;
+}
+
+.titulo {
+    font-size: 36px;
+    font-weight: 300;
+    margin-left: 50px;
+}
+
+.boton {
+    background-color: lightsalmon;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
 /* HEADER */
@@ -60,5 +83,19 @@
     height: 150px;
     border-radius: 50%;
     margin-top: -75px;
+}
+
+/* HARD & SOFT SKILLS */
+.contenedorBarras {
+    text-align: center;
+}
+
+.barra {
+    width: 90%;
+    height: 1.5rem;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 

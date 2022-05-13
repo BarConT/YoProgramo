@@ -22,7 +22,7 @@
             <div class="header-superior">
                 <div class="logo">
                     <img src="./img/APLogo-20-20.png" alt="Logo Argentina Programa" width="150px">
-                    <p>#YoProgramo</p>
+                    <p class="tituloSecundario">#YoProgramo</p>
                 </div>
                 <div class="redes-login">
                     <div class="redes">
@@ -31,12 +31,12 @@
                         <a href="https://github.com/" target="blank"><i class="fab fa-github fa-2x"></i></a>
                     </div>
                     <div class="login">
-                        <button>Login</button>
+                        <button class="boton">Login</button>
                     </div>
                 </div>
             </div>
             <div class="banner">
-                <img class="bannerImg" src="./img/banner A-P.jpg" alt="Banner">
+                <img class="bannerImg" src="./img/banner.jpg" alt="Banner">
             </div>
         </div>
         
@@ -46,11 +46,11 @@
     <div class="acerca_de">
         <div class="perfil">
             <img class="fotoPerfil" src="./img/BarConT.jpeg" alt="Foto perfil">
-            <h2>Diego Barale</h2>
-            <p>Full Stack Developer Jr</p>
+            <h2 class="tituloNombre">Diego Barale</h2>
+            <p class="tituloSecundario">Full Stack Developer Jr</p>
         </div>
         <div class="caja">
-            <h2>Acerca de</h2>
+            <h2 class="titulo">Acerca de</h2>
             <div class="contenido">
                 <p>Mi nombre es Diego Barale, soy autodidacta y muy curioso. Me apasiona el mundo de la programacion y en especial, el desarrollo web.</p>
             </div>
@@ -60,7 +60,7 @@
     <!-- EXPERIENCIA -->
     <div class="experiencia">
         <div class="caja">
-            <h2>Experiencia</h2>
+            <h2 class="titulo">Experiencia</h2>
             <div class="contenido">
                 <h3>Experiencia 1</h3>
                 <p>Inicio - Final</p>
@@ -71,7 +71,7 @@
     <!-- EDUCACION -->
     <div class="educacion">
         <div class="caja">
-            <h2>Educación</h2>
+            <h2 class="titulo">Educación</h2>
             <div class="contenido">
                 <h3>Educación 1</h3>
                 <p>Inicio - Final</p>
@@ -90,14 +90,18 @@
     <!-- HARD & SOFT SKILLS -->
     <div class="skills">
         <div class="caja">
-            <h2>Hard Skills & Soft Skills</h2>
+            <h2 class="titulo">Hard Skills & Soft Skills</h2>
             <div class="contenido">
-                <label for="resolucion">Resolución de problemas:</label>
-                <progress id="resolucion" max="100" value="70"> 70% </progress>
+                <div class="contenedorBarras">
+                    <h3>Resolución de problemas:</h3>
+                    <progress class="barra" max="100" value="70"></progress>
+                </div>
             </div>
             <div class="contenido">
-                <label for="resolucion">Resolución de problemas:</label>
-                <progress id="resolucion" max="100" value="50"> 70% </progress>
+                <div class="contenedorBarras">
+                    <h3>Diseño de sistemas:</h3>
+                    <progress class="barra" max="100" value="50"></progress>
+                </div> 
             </div>
         </div>
     </div>
@@ -105,7 +109,7 @@
     <!-- PROYECTOS -->
     <div class="proyectos">
         <div class="caja">
-            <h2>Proyectos</h2>  
+            <h2 class="titulo">Proyectos</h2>  
             <div class="contenido">
                 <h3>Proyecto 1</h3>
                 <p>Inicio - Final</p>
