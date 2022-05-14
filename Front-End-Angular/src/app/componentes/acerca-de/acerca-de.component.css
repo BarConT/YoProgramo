@@ -1,0 +1,38 @@
+.contenedor {
+    background-color: #F2F2F2;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #CFCFCF;
+    border-radius: 20px;
+}
+
+.contenido {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #CFCFCF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tituloNombre {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.tituloSecundario {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.perfil {
+    text-align : center;
+}
+
+.fotoPerfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -75px;
+}

@@ -1,0 +1,36 @@
+.contenedor {
+    background-color: #F2F2F2;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #CFCFCF;
+    border-radius: 20px;
+}
+
+.contenido {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #CFCFCF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.titulo {
+    font-size: 36px;
+    font-weight: 300;
+    margin-left: 50px;
+}
+
+.contenedorBarras {
+    text-align: center;
+}
+
+.barra {
+    width: 90%;
+    height: 1.5rem;
+    border-radius: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
