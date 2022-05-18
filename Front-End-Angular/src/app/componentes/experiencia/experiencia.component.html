@@ -1,9 +1,21 @@
 <div class="experiencia">
     <div class="contenedor">
         <h2 class="titulo">Experiencia</h2>
-        <div class="contenido">
-            <h3>Experiencia 1</h3>
-            <p>Inicio - Final</p>
+        <div class="btn-agregar">
+            <i class="fa fa-plus"></i>  
         </div>
+        <li *ngFor="let experiencia of experienciaLista">
+            <div class="contenido">
+                <div class="btn-editar">
+                    <i class="fa fa-pen"></i>  
+                </div>
+                <div class="btn-eliminar">
+                    <i class="fa fa-trash"></i> 
+                </div>
+                <h3>{{ experiencia.descripcion }}</h3>
+                <p>{{ experiencia.nombre_empresa }}</p>
+                <p><time>{{ experiencia.fechaInicio }}</time> - <time>{{ experiencia.fechaFin }}</time></p>
+            </div>
+        </li>    
     </div>
 </div>

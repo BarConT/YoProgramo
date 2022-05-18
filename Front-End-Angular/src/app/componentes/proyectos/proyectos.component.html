@@ -1,17 +1,23 @@
 <div class="proyectos">
     <div class="contenedor">
-        <h2 class="titulo">Proyectos</h2>  
-        <div class="contenido">
-            <h3>Proyecto 1</h3>
-            <p>Inicio - Final</p>
+        <h2 class="titulo">Proyectos</h2> 
+        <div class="btn-agregar">
+            <i class="fa fa-plus"></i>  
         </div>
-        <div class="contenido">
-            <h3>Proyecto 2</h3>
-            <p>Inicio - Final</p>
-        </div>
-        <div class="contenido">
-            <h3>Proyecto 3</h3>
-            <p>Inicio - Final</p>
-        </div>
+        <li *ngFor="let proyecto of proyectosLista">
+            <div class="contenido">
+                <div class="btn-editar">
+                    <i class="fa fa-pen"></i>  
+                </div>
+                <div class="btn-eliminar">
+                    <i class="fa fa-trash"></i> 
+                </div>
+                <h3>{{ proyecto.nombre }}</h3>
+                <p>{{ proyecto.descripcion }}</p>
+                <p>{{ proyecto.fecha }}</p>
+                <a href="{{ proyecto.link }}">Enlace</a>
+            </div>
+        </li> 
+        
     </div>
 </div>

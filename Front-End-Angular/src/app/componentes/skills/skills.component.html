@@ -1,17 +1,23 @@
 <div class="skills">
     <div class="contenedor">
         <h2 class="titulo">Hard Skills & Soft Skills</h2>
-        <div class="contenido">
-            <div class="contenedorBarras">
-                <h3>Resolución de problemas:</h3>
-                <progress class="barra" max="100" value="70"></progress>
+        <div class="btn-agregar">
+            <i class="fa fa-plus"></i>  
+        </div>
+        <li *ngFor="let tecnologia of tecnologiasLista">
+            <div class="contenido">
+                <div class="btn-editar">
+                    <i class="fa fa-pen"></i>  
+                </div>
+                <div class="btn-eliminar">
+                    <i class="fa fa-trash"></i> 
+                </div>
+                <div class="contenedorBarras">
+                    <h3>{{ tecnologia.nombre }}:</h3>
+                    <progress class="barra" max="100" value="{{ tecnologia.nivel }}"></progress>
+                </div>
             </div>
-        </div>
-        <div class="contenido">
-            <div class="contenedorBarras">
-                <h3>Diseño de sistemas:</h3>
-                <progress class="barra" max="100" value="50"></progress>
-            </div> 
-        </div>
+        </li>
+        
     </div>
 </div>

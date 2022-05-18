@@ -1,0 +1,67 @@
+{
+    "nombre": "Diego",
+    "apellido": "Barale",
+    "profesion": "Full Stack Developer Jr",
+    "acerca_de": "Mi nombre es Diego Barale, soy autodidacta y muy curioso. Me apasiona el mundo de la programacion y en especial, el desarrollo web.",
+    "imagenPerfil": "../../../assets/img/BarConT.jpeg",
+    "experiencia": [
+        {
+            "nombre_empresa": "Casa Suita",
+            "esTrabajoAcutal": true,
+            "fechaInicio": "Enero 2010",
+            "fechaFin": "Actualidad",
+            "descripcion": "Oficinista",
+            "url_logo": ""
+        }
+    ],
+    "educacion": [
+        {
+            "instituto": "instituto 1",
+            "titulo": "titulo 1",
+            "periodo": "periodo 1",
+            "url_logo": "url_logo 1"
+        },
+        {
+            "instituto": "instituto 2",
+            "titulo": "titulo 2",
+            "periodo": "periodo 2",
+            "url_logo": "url_logo 2"
+        },
+        {
+            "instituto": "instituto 3",
+            "titulo": "titulo 3",
+            "periodo": "periodo 3",
+            "url_logo": "url_logo 3"
+        }
+    ],
+    "tecnologias": [
+        {
+            "nombre": "Resolución de problemas",
+            "nivel": 70
+        },
+        {
+            "nombre": "Diseño de sistemas",
+            "nivel": 50
+        }
+    ],
+    "proyectos": [
+        {
+            "nombre": "Proyecto 1",
+            "fecha": "2020",
+            "descripcion": "Descripcion proyecto 1",
+            "link": "https://link-proyecto1.com"
+        },
+        {
+            "nombre": "Proyecto 2",
+            "fecha": "2021",
+            "descripcion": "Descripcion proyecto 2",
+            "link": "https://link-proyecto2.com"
+        },
+        {
+            "nombre": "Proyecto 3",
+            "fecha": "2022",
+            "descripcion": "Descripcion proyecto 3",
+            "link": "https://link-proyecto3.com"
+        }
+    ]
+}
