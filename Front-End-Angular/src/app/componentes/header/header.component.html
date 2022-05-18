@@ -1,24 +1,12 @@
-<header>
-    <div class="header">
-        <div class="header-superior">
-            <div class="logo">
-                <img src="../../../assets/img/APLogo-20-20.png" alt="Logo Argentina Programa" width="150px">
-                <p class="tituloSecundario">#YoProgramo</p>
-            </div>
-            <div class="redes-login">
-                <div class="redes">
-                    <a href="https://web.telegram.org/" target="blank"><i class="fab fa-telegram fa-2x"></i></a>
-                    <a href="https://www.linkedin.com/" target="blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                    <a href="https://github.com/" target="blank"><i class="fab fa-github fa-2x"></i></a>
-                </div>
-                <div class="login">
-                    <button class="boton">Login</button>
-                </div>
-            </div>
-        </div>
+<div class="header">
+    <div class="contenedor">
         <div class="banner">
-            <img class="bannerImg" src="../../../assets/img/banner.jpg" alt="Banner">
+            <img class="bannerImg" [src]="miPorfolio?.imagenBanner" alt="Banner">
         </div>
-    </div>
-    
-</header>
+        <div class="perfil">
+            <img class="fotoPerfil" [src]="miPorfolio?.imagenPerfil" alt="Foto perfil">
+            <h2 class="tituloNombre">{{ miPorfolio?.nombre}} {{ miPorfolio?.apellido }}</h2>
+            <p class="tituloSecundario">{{ miPorfolio?.profesion }}</p>
+        </div>
+    </div>                  
+</div>

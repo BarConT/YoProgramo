@@ -1,33 +1,31 @@
-.header-superior {
-    background-color: aquamarine;
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.redes-login {
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.boton {
-    background-color: lightsalmon;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 10px;
+.contenedor {
+    padding: 0 0 20px 0;
 }
 
 .bannerImg {
     height: 500px;
     width: 100%;
     object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.tituloNombre {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.tituloSecundario {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.perfil {
+    text-align : center;
+}
+
+.fotoPerfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -75px;
 }
