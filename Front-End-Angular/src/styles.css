@@ -32,3 +32,16 @@ li {
     font-weight: 300;
     margin-left: 50px;
 }
+
+.centrar {
+    text-align: center;
+}
+
+.boton {
+    background-color: lightsalmon;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

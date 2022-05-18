@@ -14,11 +14,13 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { LoginComponent } from './componentes/auth/login/login.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
+import { PaginaErrorComponent } from './componentes/pagina-error/pagina-error.component';
 
 const routes: Routes = [
   { path: 'home', component: PortfolioComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: '**', component: PaginaErrorComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const routes: Routes = [
     ProyectosComponent,
     PortfolioComponent,
     LoginComponent,
-    NavBarComponent
+    NavBarComponent,
+    PaginaErrorComponent
   ],
   imports: [
     BrowserModule,
