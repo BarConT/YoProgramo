@@ -18,9 +18,9 @@ import { PaginaErrorComponent } from './componentes/pagina-error/pagina-error.co
 
 const routes: Routes = [
   { path: 'home', component: PortfolioComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent},
-  { path: '**', component: PaginaErrorComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: PaginaErrorComponent }
 ];
 
 @NgModule({

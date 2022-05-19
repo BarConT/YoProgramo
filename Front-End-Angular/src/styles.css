@@ -45,3 +45,33 @@ li {
     padding: 10px 20px;
     border-radius: 10px;
 }
+
+/* ICONOS */
+.titulo-editar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-agregar i, .btn-editar i {
+    margin-right: 40px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.btn-editar-eliminar i {
+    margin-left: 10px;
+    background-color: #F2F2F2;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.btn-agregar i:hover, .btn-editar i:hover {
+    padding: 12px;
+}
+
+i:hover {
+    background-color: #CFCFCF;
+}
+/* FIN ICONOS */
+
