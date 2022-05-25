@@ -1,20 +1,16 @@
 <div class="proyectos">
     <div class="contenedor">
-        <div class="titulo-editar">
-            <h2 class="titulo">Proyectos</h2> 
-            <div class="btn-agregar">
-                <i class="fa fa-plus"></i>  
-            </div>
+        <h2 class="titulo">Proyectos</h2> 
+        <div *ngIf="isUserLogged" class="botones">
+            <i class="fa fa-plus"></i>  
         </div>
         <li *ngFor="let proyecto of proyectosLista">
             <div class="contenido">
-                <div class="titulo-editar">
-                    <h3>{{ proyecto.nombre }}</h3>
-                    <div class="btn-editar-eliminar">
-                        <i class="fa fa-pen"></i>  
-                        <i class="fa fa-trash"></i> 
-                    </div>    
+                <div *ngIf="isUserLogged" class="botones">
+                    <i class="fa fa-pen"></i>  
+                    <i class="fa fa-trash"></i> 
                 </div>
+                <h3>{{ proyecto.nombre }}</h3>
                 <p>{{ proyecto.descripcion }}</p>
                 <p>{{ proyecto.fecha }}</p>
                 <a href="{{ proyecto.link }}">Enlace</a>

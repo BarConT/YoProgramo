@@ -3,10 +3,14 @@
         <div class="banner">
             <img class="bannerImg" [src]="miPorfolio?.imagenBanner" alt="Banner">
         </div>
+        <div *ngIf="isUserLogged" class="botones bajar">
+            <i class="fa fa-pen"></i>  
+        </div>
         <div class="perfil">
             <img class="fotoPerfil" [src]="miPorfolio?.imagenPerfil" alt="Foto perfil">
             <h2 class="tituloNombre">{{ miPorfolio?.nombre}} {{ miPorfolio?.apellido }}</h2>
             <p class="tituloSecundario">{{ miPorfolio?.profesion }}</p>
         </div>
+        
     </div>                  
 </div>

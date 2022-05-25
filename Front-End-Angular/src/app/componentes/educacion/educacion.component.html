@@ -1,24 +1,21 @@
 <div class="educacion">
     <div class="contenedor">
-        <div class="titulo-editar">
-            <h2 class="titulo">Educación</h2> 
-            <div class="btn-agregar">
-                <i class="fa fa-plus"></i>  
-            </div>
+        <h2 class="titulo">Educación</h2>
+        <div *ngIf="isUserLogged" class="botones">
+            <i class="fa fa-plus"></i>  
         </div>
         <li *ngFor="let educacion of educacionLista">
             <div class="contenido">
-                <div class="titulo-editar">
-                    <h3>{{ educacion.instituto }}</h3>
-                    <div class="btn-editar-eliminar">
-                        <i class="fa fa-pen"></i>  
-                        <i class="fa fa-trash"></i> 
-                    </div>    
-                </div>
+                <div *ngIf="isUserLogged" class="botones">
+                    <i class="fa fa-pen"></i>  
+                    <i class="fa fa-trash"></i> 
+                </div> 
+                <img class="logo" src="../../../assets/img/fondo.jpg" alt="Logo {{ educacion.instituto }}">     
+                <h3>{{ educacion.instituto }}</h3>
                 <p>{{ educacion.titulo }}</p>
                 <p>{{ educacion.periodo }}</p>
+                
             </div>
-        </li>
-        
+        </li>   
     </div>
 </div>

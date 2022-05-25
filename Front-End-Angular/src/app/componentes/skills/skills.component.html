@@ -1,25 +1,20 @@
 <div class="skills">
     <div class="contenedor">
-        <div class="titulo-editar">
-            <h2 class="titulo">Hard Skills & Soft Skills</h2> 
-            <div class="btn-agregar">
-                <i class="fa fa-plus"></i>  
-            </div>
+        <h2 class="titulo">Hard Skills & Soft Skills</h2> 
+        <div *ngIf="isUserLogged" class="botones">
+            <i class="fa fa-plus"></i>  
         </div>
         <li *ngFor="let tecnologia of tecnologiasLista">
             <div class="contenido">
-                <div class="titulo-editar">
-                    <h3>{{ tecnologia.nombre }}:</h3>
-                    <div class="btn-editar-eliminar">
-                        <i class="fa fa-pen"></i>  
-                        <i class="fa fa-trash"></i> 
-                    </div>    
+                <div *ngIf="isUserLogged" class="botones">
+                    <i class="fa fa-pen"></i>  
+                    <i class="fa fa-trash"></i> 
                 </div>
                 <div class="contenedorBarras">
+                    <h3>{{ tecnologia.nombre }}:</h3>
                     <progress class="barra" max="100" value="{{ tecnologia.nivel }}"></progress>
                 </div>
-            </div>
+            </div>  
         </li>
-        
     </div>
 </div>

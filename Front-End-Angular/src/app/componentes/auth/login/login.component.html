@@ -1,8 +1,34 @@
-<form action="">
-    <input type="text" placeholder="Usuario" name="usuario" [(ngModel)]="usuario">
-    <input type="password" placeholder="Contraseña" name="password" [(ngModel)]="password">
-    <div class="centrar">
-        <button (click)="onSubmit()" class="boton">Iniciar sesión</button>
-        <button routerLink="/home" class="boton">Cancelar</button>
+<div class="contenedor">
+    <h2 class="titulo">Iniciar sesión</h2>
+    <div class="contenido">
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+            <div>
+                <input type="text" formControlName="usuario" placeholder="Usuario" name="usuario">
+                <div *ngIf="Usuario?.errors && Usuario?.touched">
+                    <p *ngIf="Usuario?.hasError('required')">
+                        El usuario es requerido.
+                    </p>
+                    <p *ngIf="Usuario?.errors?.['minlength']">
+                        El usuario debe ser de 5 o más caracteres.
+                    </p>   
+                </div>
+            </div>
+            <div>
+                <input type="password" formControlName="password" placeholder="Contraseña" name="password">
+                <div *ngIf="Password?.errors && Password?.touched">
+                    <p *ngIf="Password?.hasError('required')">
+                        La contraseña es requerida.
+                    </p>
+                    <p *ngIf="Password?.errors?.['minlength']">
+                        La contraseña debe ser de 5  o más caracteres.
+                    </p>
+                </div>
+            </div>
+            <div class="centrar">
+                <button [disabled]="form.invalid" type="submit" class="boton">Iniciar sesión</button>
+                <button routerLink="/home" class="boton">Cancelar</button>
+            </div>
+        </form>
     </div>
-</form>
+    
+</div>

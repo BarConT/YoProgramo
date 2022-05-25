@@ -46,32 +46,45 @@ li {
     border-radius: 10px;
 }
 
+.logo {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 5px 5px 20px 0;
+}
+
 /* ICONOS */
-.titulo-editar {
-    display: flex;
-    justify-content: space-between;
+
+.botones {
+    float: right;
 }
 
-.btn-agregar i, .btn-editar i {
-    margin-right: 40px;
+.botones i {
     background-color: #FFFFFF;
+    margin-right: 10px;
     padding: 10px;
     border-radius: 50%;
 }
 
-.btn-editar-eliminar i {
-    margin-left: 10px;
+.contenido .botones i {
     background-color: #F2F2F2;
-    padding: 10px;
-    border-radius: 50%;
 }
 
-.btn-agregar i:hover, .btn-editar i:hover {
-    padding: 12px;
+.contenedor > .botones {
+    margin-top: -40px;
+    margin-right: 40px;
 }
 
-i:hover {
+.contenedor > .botones:hover {
+    padding: 1px;
+}
+
+.botones i:hover, .contenido .botones i:hover {
     background-color: #CFCFCF;
 }
-/* FIN ICONOS */
 
+.contenedor .bajar {
+    margin-top: 10px;
+}
+
+/* FIN ICONOS */

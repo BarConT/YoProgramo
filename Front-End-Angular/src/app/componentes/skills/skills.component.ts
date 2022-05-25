@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -7,10 +8,15 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
+
   tecnologiasLista: any;
-  constructor(private datosPortfolio:PortfolioService) { }
+  isUserLogged: boolean = false;
+
+  constructor(private datosPortfolio:PortfolioService,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.isUserLogged = this.authService.isUserLogged();
     this.datosPortfolio.obtenerDatos().subscribe(data => this.tecnologiasLista = data.tecnologias);
   }
 

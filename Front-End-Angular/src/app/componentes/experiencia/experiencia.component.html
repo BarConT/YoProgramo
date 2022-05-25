@@ -1,20 +1,17 @@
 <div class="experiencia">
     <div class="contenedor">
-        <div class="titulo-editar">
             <h2 class="titulo">Experiencia</h2> 
-            <div class="btn-agregar">
+            <div *ngIf="isUserLogged" class="botones">
                 <i class="fa fa-plus"></i>  
             </div>
-        </div>
         <li *ngFor="let experiencia of experienciaLista">
             <div class="contenido">
-                <div class="titulo-editar">
-                    <h3>{{ experiencia.descripcion }}</h3>
-                    <div class="btn-editar-eliminar">
-                        <i class="fa fa-pen"></i>  
-                        <i class="fa fa-trash"></i> 
-                    </div>    
+                <div *ngIf="isUserLogged" class="botones">
+                    <i class="fa fa-pen"></i>  
+                    <i class="fa fa-trash"></i> 
                 </div>
+                <img class="logo" src="../../../assets/img/fondo.jpg" alt="Logo {{ experiencia.nombre_empresa }}">
+                <h3>{{ experiencia.descripcion }}</h3>  
                 <p>{{ experiencia.nombre_empresa }}</p>
                 <p><time>{{ experiencia.fechaInicio }}</time> - <time>{{ experiencia.fechaFin }}</time></p>
             </div>

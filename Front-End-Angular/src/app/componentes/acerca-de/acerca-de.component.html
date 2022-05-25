@@ -1,11 +1,9 @@
 <div class="acerca_de">
     <div class="contenedor">
-        <div class="titulo-editar">
-            <h2 class="titulo">Acerca de</h2>
-            <div class="btn-editar">
-                <i class="fa fa-pen"></i>  
-            </div>    
+        <div *ngIf="isUserLogged" class="botones bajar">
+            <i class="fa fa-pen"></i>  
         </div>
+        <h2 class="titulo">Acerca de</h2>
         <div class="contenido">
             <p>{{ acercaDe }}</p>
         </div>

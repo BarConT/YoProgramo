@@ -9,9 +9,16 @@
             <a href="https://www.linkedin.com/in/diego-barale-369520185/" target="blank"><i class="fab fa-linkedin fa-2x"></i></a>
             <a href="https://github.com/BarConT" target="blank"><i class="fab fa-github fa-2x"></i></a>
         </div>
-        <div class="login">
-                <button class="boton" routerLink="login">Login</button>   
+        
+        <div *ngIf="isUserLogged; else login" class="logout">
+            <button class="boton" (click)="logout()">Logout</button>   
         </div>
+        <ng-template #login>
+            <div class="login">
+                <button class="boton" routerLink="login">Login</button>   
+            </div>
+        </ng-template>
+        
     </div>
 </div>
 
