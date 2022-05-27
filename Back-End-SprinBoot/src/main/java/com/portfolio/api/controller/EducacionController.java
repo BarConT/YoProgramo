@@ -24,8 +24,8 @@ public class EducacionController {
     private EducacionService educacionService;
     
     @PostMapping ("educacion/create")
-    public void crearEducacion(@RequestBody Educacion educ) {
-        educacionService.crearEducacion(educ);
+    public Educacion crearEducacion(@RequestBody Educacion educacion) {
+        return educacionService.crearEducacion(educacion);
     }
     
     @GetMapping ("educacion/read")
@@ -41,7 +41,7 @@ public class EducacionController {
     }
     
     @PutMapping ("educacion/update")
-    public void editarEducacion(@RequestBody Educacion educacion) {
+    public void modificarEducacion(@RequestBody Educacion educacion) {
         educacionService.modificarEducacion(educacion);
     }
     

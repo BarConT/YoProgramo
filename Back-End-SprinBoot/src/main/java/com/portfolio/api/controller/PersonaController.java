@@ -1,13 +1,14 @@
 package com.portfolio.api.controller;
 
 import com.portfolio.api.model.Persona;
-import com.portfolio.api.service.IPersonaService;
+import com.portfolio.api.service.PersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,26 +21,32 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     
     @Autowired
-    private IPersonaService personaServi;
+    private PersonaService personaService;
     
-    @GetMapping ("/api/nombre")
-    public String nombre() {
-        return "Diego Barale";
-    }
-    
-    @PostMapping ("api/nueva/persona")
+    @PostMapping ("persona/create")
     public void agregarPersona(@RequestBody Persona pers) {
-        personaServi.crearPersona(pers);
+        personaService.crearPersona(pers);
     }
     
-    @GetMapping ("api/ver/personas")
+    @GetMapping ("persona/read")
     @ResponseBody
-    public List <Persona> verPersonas() {
-        return personaServi.verPersonas();
+    public List <Persona> obtenerPersonas() {
+        return personaService.obtenerPersonas();
     }
     
-    @DeleteMapping ("api/borrar/persona/{id}")
+    @GetMapping ("persona/read/{id}")
+    @ResponseBody
+    public Persona obtenerPersonas(Long id) {
+        return personaService.obtenerPersona(id);
+    }
+    
+    @PutMapping ("persona/update")
+    public void editarPersona(@RequestBody Persona persona) {
+        personaService.modificarPersona(persona);
+    }
+    
+    @DeleteMapping ("persona/delete{id}")
     public void borrarPersona(@PathVariable Long id) {
-        personaServi.borrarPersona(id);
+        personaService.borrarPersona(id);
     }
 }

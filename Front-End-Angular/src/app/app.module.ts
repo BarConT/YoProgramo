@@ -35,7 +35,7 @@ const routes: Routes = [
     PortfolioComponent,
     LoginComponent,
     NavBarComponent,
-    PaginaErrorComponent
+    PaginaErrorComponent,
   ],
   imports: [
     BrowserModule,
