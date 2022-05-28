@@ -2,19 +2,61 @@
     <div class="contenedor">
             <h2 class="titulo">Experiencia</h2> 
             <div *ngIf="isUserLogged" class="botones">
-                <i class="fa fa-plus"></i>  
+                <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
             </div>
-        <li *ngFor="let experiencia of experienciaLista">
+        <li *ngFor="let experiencia of experienciaLista; let i = index">
             <div class="contenido">
                 <div *ngIf="isUserLogged" class="botones">
-                    <i class="fa fa-pen"></i>  
-                    <i class="fa fa-trash"></i> 
+                    <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
+                    <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
                 </div>
-                <img class="logo" src="../../../assets/img/fondo.jpg" alt="Logo {{ experiencia.nombre_empresa }}">
+                <img class="logo" src="../../../assets/img/fondo.jpg" alt="Logo {{ experiencia.nombreEmpresa }}">
                 <h3>{{ experiencia.descripcion }}</h3>  
-                <p>{{ experiencia.nombre_empresa }}</p>
+                <p>{{ experiencia.nombreEmpresa }} - {{ experiencia.tipoEmpleo }}</p>
                 <p><time>{{ experiencia.fechaInicio }}</time> - <time>{{ experiencia.fechaFin }}</time></p>
             </div>
         </li>    
     </div>
 </div>
+
+<!-- MODAL -->
+<div *ngIf="modal" class="modal" >
+    <div class="contenedor contenedor-modal">
+        <div class="titulo-modal">
+            <h2 class="titulo">{{ tituloModal }}</h2>
+            <button (click)="cerrarModal()" class="boton">X</button>
+        </div>
+        <div class="contenido">
+            <form [formGroup]="experienciaForm" (ngSubmit)="onSubmit()">
+                <input type="hidden" name="id">
+                <div>
+                    <label for="nombreEmpresa">Nombre Empresa</label>
+                    <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa">
+                </div>
+                <div>
+                    <label for="fechaInicio">Fecha Inicio</label>
+                    <input type="text" id="fechaInicio" formControlName="fechaInicio">
+                </div>
+                <div>
+                    <label for="fechaFin">Fecha Fin</label>
+                    <input type="text" id="fechaFin" formControlName="fechaFin">
+                </div>
+                <div>
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"></textarea>
+                </div>
+                <div>
+                    <label for="tipoEmpleo">Tipo Empleo</label>
+                    <input type="text" id="tipoEmpleo" formControlName="tipoEmpleo">
+                </div>
+                <div class="centrar">
+                    <button [disabled]="experienciaForm.invalid" type="submit" class="boton">Guardar</button>
+                    <button (click)="cerrarModal()" class="boton">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
