@@ -78,7 +78,6 @@ export class EducacionComponent implements OnInit {
   }
 
   abrirModalEditar(index: number) {
-    console.log(index)
     this.tituloModal = "Editar Educación";
     this.limpiarForm();
     this.modal = true;

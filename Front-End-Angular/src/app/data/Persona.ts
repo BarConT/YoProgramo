@@ -3,6 +3,5 @@ export interface Persona {
     nombre: string,
     apellido: string,
     correo: string,
-    profesion: string,
-    urlFoto: string
+    profesion: string
 }

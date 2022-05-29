@@ -30,15 +30,15 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="instituto">Instituto</label>
-                    <input type="text" id="instituto" formControlName="instituto">
+                    <input type="text" id="instituto" formControlName="instituto" maxlength="100">
                 </div>
                 <div>
                     <label for="titulo">Título</label>
-                    <input type="text" id="titulo" formControlName="titulo">
+                    <input type="text" id="titulo" formControlName="titulo" maxlength="100">
                 </div>
                 <div>
                     <label for="periodo">Período</label>
-                    <input type="text" id="periodo" formControlName="periodo">
+                    <input type="text" id="periodo" formControlName="periodo" maxlength="100">
                 </div>
                 <div class="centrar">
                     <button [disabled]="educacionForm.invalid" type="submit" class="boton">Guardar</button>

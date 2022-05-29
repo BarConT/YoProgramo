@@ -23,7 +23,7 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="descripcion">Descripción</label>
-                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"></textarea>
+                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion" maxlength="500"></textarea>
                 </div>
                 <div class="centrar">
                     <button [disabled]="acercaDeForm.invalid" type="submit" class="boton">Guardar</button>

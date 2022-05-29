@@ -30,23 +30,23 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="nombreEmpresa">Nombre Empresa</label>
-                    <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa">
+                    <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa" maxlength="100">
                 </div>
                 <div>
                     <label for="fechaInicio">Fecha Inicio</label>
-                    <input type="text" id="fechaInicio" formControlName="fechaInicio">
+                    <input type="text" id="fechaInicio" formControlName="fechaInicio"  maxlength="50">
                 </div>
                 <div>
                     <label for="fechaFin">Fecha Fin</label>
-                    <input type="text" id="fechaFin" formControlName="fechaFin">
+                    <input type="text" id="fechaFin" formControlName="fechaFin"  maxlength="50">
                 </div>
                 <div>
                     <label for="descripcion">Descripción</label>
-                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"></textarea>
+                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"  maxlength="200"></textarea>
                 </div>
                 <div>
                     <label for="tipoEmpleo">Tipo Empleo</label>
-                    <input type="text" id="tipoEmpleo" formControlName="tipoEmpleo">
+                    <input type="text" id="tipoEmpleo" formControlName="tipoEmpleo"  maxlength="100">
                 </div>
                 <div class="centrar">
                     <button [disabled]="experienciaForm.invalid" type="submit" class="boton">Guardar</button>

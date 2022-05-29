@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+
 import { LoginDto } from '../data/LoginDto';
+import { config } from '../data/config/Config'
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,9 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   public login(credenciales: LoginDto): Observable<Boolean> {
-    return this.http.post<Boolean>("http://localhost:8080/login", credenciales).pipe(
+    return this.http.post<Boolean>(config.baseUrl + "login", credenciales).pipe(
       tap((data: Boolean) => {
-        sessionStorage.setItem("user", credenciales.usuario);
+        sessionStorage.setItem("user", "admin");
       })
     );
   }

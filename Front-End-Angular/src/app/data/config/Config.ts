@@ -1,3 +1,3 @@
 export const config = {
-    baseUrl: "http://localhost:8080/"
+    baseUrl: "https://damp-basin-53022.herokuapp.com/"
 }

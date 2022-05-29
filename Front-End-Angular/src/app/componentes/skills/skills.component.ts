@@ -23,7 +23,7 @@ export class SkillsComponent implements OnInit {
               private formBuilder: FormBuilder) { 
                 this.tecnologiaForm = this.formBuilder.group({
                   id: [''],
-                  nombre: ['', [Validators.required]],
+                  nombre: ['', [Validators.required, Validators.maxLength(100)]],
                   nivel: ['', [Validators.required]]
                 })
               }

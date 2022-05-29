@@ -11,26 +11,26 @@ li {
 
 .contenedor {
     background-color: #F2F2F2;
-    padding: 20px;
-    margin: 20px;
+    padding: 1rem;
+    margin: 1rem;
     border: solid 1px #CFCFCF;
     border-radius: 20px;
 }
 
 .contenido {
     background-color: #FFFFFF;
-    padding: 20px;
-    margin: 20px;
+    padding: 1.5rem;
+    margin: 1.5rem;
     border: solid 1px #CFCFCF;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 600;
 }
 
 .titulo {
-    font-size: 36px;
+    font-size: 2.5rem;
     font-weight: 300;
-    margin-left: 50px;
+    margin-left: 3rem;
 }
 
 .centrar {
@@ -40,11 +40,12 @@ li {
 .boton {
     background-color: lightsalmon;
     color: white;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 0.6rem 1.25rem;
     border-radius: 10px;
-    margin-left: 20px;
+    margin-left: 1.25rem;
+    cursor: pointer;
 }
 
 .boton:hover {
@@ -52,8 +53,8 @@ li {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     float: left;
     margin: 5px 5px 20px 0;
 }
@@ -66,8 +67,8 @@ li {
 
 .botones i {
     background-color: #FFFFFF;
-    margin-right: 10px;
-    padding: 10px;
+    margin-right: 0.6rem;
+    padding: 0.6rem;
     border-radius: 50%;
 }
 
@@ -76,8 +77,8 @@ li {
 }
 
 .contenedor > .botones {
-    margin-top: -40px;
-    margin-right: 40px;
+    margin-top: -2.5rem;
+    margin-right: 2.5rem;
 }
 
 .contenedor > .botones:hover {
@@ -86,10 +87,11 @@ li {
 
 .botones i:hover, .contenido .botones i:hover {
     background-color: #CFCFCF;
+    cursor: pointer;
 }
 
 .contenedor .bajar {
-    margin-top: 10px;
+    margin-top: 0.6rem;
 }
 /* FIN ICONOS */
 
@@ -110,7 +112,7 @@ li {
     width: 70%;
     height: auto;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
 }
 
@@ -122,10 +124,71 @@ li {
 
 input, textarea {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 0.7rem 1.2rem;
+    margin: 0.5rem 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 700px) {
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .contenedor {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .contenido {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .yoprogramo {
+        display: none;
+    }
+
+    .contenedor > .botones {
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .boton {
+        height: 2.5rem;
+    }
+
+    .contenedor-modal {
+        width: 90%;
+    }
+    
+}
+
+@media only screen and (max-width: 340px) {
+    .redes {
+        display: none;
+    }
+
+    .contenedor {
+        margin: 0.2rem;
+        padding: 0.2rem;
+    }
+
+    .contenido {
+        margin: 0.2rem;
+        padding: 0.4rem;
+    }
+
+    .boton {
+        height: 2rem;
+    }
+
+    .contenedor-modal {
+        width: 95%;
+    }
+
 }

@@ -31,24 +31,19 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" formControlName="nombre">
-                    <!-- <div *ngIf="Nombre?.errors && Nombre?.touched">
-                        <p *ngIf="Nombre?.hasError('required')">
-                            El nombre es requerido.
-                        </p>
-                    </div> -->
+                    <input type="text" id="nombre" formControlName="nombre"  maxlength="100">
                 </div>
                 <div>
                     <label for="descripcion">Descripción</label>
-                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"></textarea>
+                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion" maxlength="200"></textarea>
                 </div>
                 <div>
                     <label for="fecha">Fecha</label>
-                    <input type="text" id="fecha" formControlName="fecha">
+                    <input type="text" id="fecha" formControlName="fecha"  maxlength="100">
                 </div>
                 <div>
                     <label for="link">Link</label>
-                    <input type="url" id="link" formControlName="link">
+                    <input type="url" id="link" formControlName="link"  maxlength="200">
                 </div>
                 <div class="centrar">
                     <button [disabled]="proyectosForm.invalid" type="submit" class="boton">Guardar</button>

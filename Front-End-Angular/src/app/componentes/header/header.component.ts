@@ -26,8 +26,7 @@ export class HeaderComponent implements OnInit {
                   nombre: ['', [Validators.required]],
                   apellido: ['', [Validators.required]],
                   correo: ['', [Validators.required]],
-                  profesion: ['', [Validators.required]],
-                  urlFoto: ['', [Validators.required]]
+                  profesion: ['', [Validators.required]]
                 })
                }
 
@@ -47,7 +46,6 @@ export class HeaderComponent implements OnInit {
       apellido: persona.apellido,
       correo: persona.correo,
       profesion: persona.profesion,
-      urlFoto: persona.urlFoto
     });
   }
 
@@ -58,7 +56,6 @@ export class HeaderComponent implements OnInit {
       apellido: '',
       correo: '',
       profesion: '',
-      urlFoto: ''
     });
   }
 

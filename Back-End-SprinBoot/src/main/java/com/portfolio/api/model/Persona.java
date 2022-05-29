@@ -24,18 +24,16 @@ public class Persona {
     private String apellido;
     private String correo;
     private String profesion;
-    private String urlFoto;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, String correo, String profesion, String urlFoto) {
+    public Persona(Long id, String nombre, String apellido, String correo, String profesion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.profesion = profesion;
-        this.urlFoto = urlFoto;
     }
    
 }

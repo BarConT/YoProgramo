@@ -8,7 +8,7 @@
             <i *ngIf="personaLista.length==1" (click)="abrirModalEditar(0)" class="fa fa-pen"></i>
         </div>
         <div class="perfil">
-            <img class="fotoPerfil" [src]="personaLista[0]?.urlFoto" alt="Foto perfil">
+            <img class="fotoPerfil" src="../../../assets/img/BarConT.jpeg" alt="Foto perfil">
             <h2 class="tituloNombre">{{ personaLista[0]?.nombre}} {{ personaLista[0]?.apellido }}</h2>
             <p class="tituloSecundario">{{ personaLista[0]?.profesion }}</p>
             <p>{{ personaLista[0]?.correo }}</p>
@@ -28,23 +28,19 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" formControlName="nombre">
+                    <input type="text" id="nombre" formControlName="nombre" maxlength="50">
                 </div>
                 <div>
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" formControlName="apellido">
+                    <input type="text" id="apellido" formControlName="apellido" maxlength="50">
                 </div>
                 <div>
                     <label for="correo">Email</label>
-                    <input type="email" id="correo" formControlName="correo">
+                    <input type="email" id="correo" formControlName="correo" maxlength="100">
                 </div>
                 <div>
                     <label for="profesion">Profesión</label>
-                    <input type="text" id="profesion" formControlName="profesion">
-                </div>
-                <div>
-                    <label for="urlFoto">Foto Perfil</label>
-                    <input type="file" id="urlFoto" formControlName="urlFoto">
+                    <input type="text" id="profesion" formControlName="profesion" maxlength="100">
                 </div>
                 <div class="centrar">
                     <button [disabled]="personaForm.invalid" type="submit" class="boton">Guardar</button>
