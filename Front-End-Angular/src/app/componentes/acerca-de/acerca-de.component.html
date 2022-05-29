@@ -1,11 +1,35 @@
 <div class="acerca_de">
     <div class="contenedor">
         <div *ngIf="isUserLogged" class="botones bajar">
-            <i class="fa fa-pen"></i>  
+            <i *ngIf="acercaDeLista.length==0" (click)="abrirModalNuevo()" class="fa fa-plus"></i>
+            <i *ngIf="acercaDeLista.length>=1" (click)="abrirModalEditar(0)" class="fa fa-pen"></i>            
         </div>
         <h2 class="titulo">Acerca de</h2>
         <div class="contenido">
-            <p>{{ acercaDe }}</p>
+            <p>{{ acercaDeLista[0]?.descripcion}}</p> 
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div *ngIf="modal" class="modal" >
+    <div class="contenedor contenedor-modal">
+        <div class="titulo-modal">
+            <h2 class="titulo">{{ tituloModal }}</h2>
+            <button (click)="cerrarModal()" class="boton">X</button>
+        </div>
+        <div class="contenido">
+            <form [formGroup]="acercaDeForm" (ngSubmit)="onSubmit()">
+                <input type="hidden" name="id">
+                <div>
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" cols="30" rows="2" formControlName="descripcion"></textarea>
+                </div>
+                <div class="centrar">
+                    <button [disabled]="acercaDeForm.invalid" type="submit" class="boton">Guardar</button>
+                    <button (click)="cerrarModal()" class="boton">Cerrar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

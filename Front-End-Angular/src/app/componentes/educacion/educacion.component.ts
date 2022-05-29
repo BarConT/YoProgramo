@@ -26,8 +26,7 @@ export class EducacionComponent implements OnInit {
         id: [''],
         instituto: ['', [Validators.required]],
         titulo: ['', [Validators.required]],
-        periodo: ['', [Validators.required]],
-        urlLogo: ['', [Validators.required]]
+        periodo: ['', [Validators.required]]
       })
      }
 
@@ -46,7 +45,6 @@ export class EducacionComponent implements OnInit {
       instituto: educacion.instituto,
       titulo: educacion.titulo,
       periodo: educacion.periodo,
-      urlLogo: educacion.urlLogo
     });
   }
 
@@ -56,7 +54,6 @@ export class EducacionComponent implements OnInit {
       instituto: '',
       titulo: '',
       periodo: '',
-      urlLogo: ''
     });
   }
 
@@ -81,6 +78,7 @@ export class EducacionComponent implements OnInit {
   }
 
   abrirModalEditar(index: number) {
+    console.log(index)
     this.tituloModal = "Editar Educación";
     this.limpiarForm();
     this.modal = true;

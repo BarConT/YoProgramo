@@ -5,6 +5,7 @@
     "acerca_de": "Mi nombre es Diego Barale, soy autodidacta y muy curioso. Me apasiona el mundo de la programacion y en especial, el desarrollo web.",
     "imagenPerfil": "../../../assets/img/BarConT.jpeg",
     "imagenBanner": "../../../assets/img/banner.jpg",
+    "correo": "diego@gmail.com",
     "experiencia": [
         {
             "nombre_empresa": "Casa Suita",

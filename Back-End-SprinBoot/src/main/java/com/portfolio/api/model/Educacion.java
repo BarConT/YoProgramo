@@ -22,16 +22,14 @@ public class Educacion {
     private String instituto;
     private String titulo;
     private String periodo;
-    private String urlLogo;
 
     public Educacion() {
     }
 
-    public Educacion(String instituto, String titulo, String periodo, String urlLogo) {
+    public Educacion(String instituto, String titulo, String periodo) {
         this.instituto = instituto;
         this.titulo = titulo;
         this.periodo = periodo;
-        this.urlLogo = urlLogo;
     }
     
     

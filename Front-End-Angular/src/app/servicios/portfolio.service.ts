@@ -6,6 +6,9 @@ import { config } from '../data/config/Config'
 import { Educacion } from '../data/Educacion';
 import { Experiencia } from '../data/Experiencia';
 import { Proyecto } from '../data/Proyecto';
+import { Tecnologia } from '../data/Tecnologia';
+import { AcercaDe } from '../data/AcercaDe';
+import { Persona } from '../data/Persona';
 
 
 @Injectable({
@@ -69,4 +72,56 @@ export class PortfolioService {
   borrarExperiencia(id: number): Observable<any> {
     return this.http.delete<any>(config.baseUrl + "experiencia/delete/" + id);
   }
+
+  // TECNOLOGIA
+  obtenerDatosTecnologia(): Observable<Tecnologia[]> {
+    return this.http.get<any>(config.baseUrl + "tecnologia/read")
+  }
+
+  guardarNuevaTecnologia(tecnologia: Tecnologia): Observable<Tecnologia> {
+    return this.http.post<any>(config.baseUrl + "tecnologia/create", tecnologia);
+  }
+
+  modificarTecnologia(tecnologia: Tecnologia): Observable<any> {
+    return this.http.put<any>(config.baseUrl + "tecnologia/update", tecnologia);
+  }
+
+  borrarTecnologia(id: number): Observable<any> {
+    return this.http.delete<any>(config.baseUrl + "tecnologia/delete/" + id);
+  }
+
+  // ACERCA DE
+  obtenerDatosAcercaDe(): Observable<AcercaDe[]> {
+    return this.http.get<any>(config.baseUrl + "acerca-de/read");
+  }
+
+  guardarNuevoAcercaDe(acercaDe: AcercaDe): Observable<AcercaDe> {
+    return this.http.post<any>(config.baseUrl + "acerca-de/create", acercaDe);
+  }
+
+  modificarAcercaDe(acercaDe: AcercaDe): Observable<any> {
+    return this.http.put<any>(config.baseUrl + "acerca-de/update", acercaDe);
+  }
+
+  borrarAcercaDe(id: number): Observable<any> {
+    return this.http.delete<any>(config.baseUrl + "acerca-de/delete/" + id);
+  }
+
+  // PERSONA
+  obtenerDatosPersona(): Observable<Persona[]> {
+    return this.http.get<any>(config.baseUrl + "persona/read")
+  }
+
+  guardarNuevaPersona(persona: Persona): Observable<Persona> {
+    return this.http.post<any>(config.baseUrl + "persona/create", persona);
+  }
+
+  modificarPersona(persona: Persona): Observable<any> {
+    return this.http.put<any>(config.baseUrl + "persona/update", persona);
+  }
+
+  borrarPersona(id: number): Observable<any> {
+    return this.http.delete<any>(config.baseUrl + "persona/delete/" + id);
+  }
+
 }

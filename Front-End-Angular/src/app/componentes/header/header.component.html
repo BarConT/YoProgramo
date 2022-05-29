@@ -1,15 +1,57 @@
 <div class="header">
     <div class="contenedor">
         <div class="banner">
-            <img class="bannerImg" [src]="miPorfolio?.imagenBanner" alt="Banner">
+            <img class="bannerImg" src="../../../assets/img/banner.jpg" alt="Banner">
         </div>
         <div *ngIf="isUserLogged" class="botones bajar">
-            <i class="fa fa-pen"></i>  
+            <i *ngIf="personaLista.length==0" (click)="abrirModalNuevo()" class="fa fa-plus"></i>
+            <i *ngIf="personaLista.length==1" (click)="abrirModalEditar(0)" class="fa fa-pen"></i>
         </div>
         <div class="perfil">
-            <img class="fotoPerfil" [src]="miPorfolio?.imagenPerfil" alt="Foto perfil">
-            <h2 class="tituloNombre">{{ miPorfolio?.nombre}} {{ miPorfolio?.apellido }}</h2>
-            <p class="tituloSecundario">{{ miPorfolio?.profesion }}</p>
+            <img class="fotoPerfil" [src]="personaLista[0]?.urlFoto" alt="Foto perfil">
+            <h2 class="tituloNombre">{{ personaLista[0]?.nombre}} {{ personaLista[0]?.apellido }}</h2>
+            <p class="tituloSecundario">{{ personaLista[0]?.profesion }}</p>
+            <p>{{ personaLista[0]?.correo }}</p>
         </div>  
     </div>                  
 </div>
+
+<!-- MODAL -->
+<div *ngIf="modal" class="modal" >
+    <div class="contenedor contenedor-modal">
+        <div class="titulo-modal">
+            <h2 class="titulo">{{ tituloModal }}</h2>
+            <button (click)="cerrarModal()" class="boton">X</button>
+        </div>
+        <div class="contenido">
+            <form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+                <input type="hidden" name="id">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" formControlName="nombre">
+                </div>
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" formControlName="apellido">
+                </div>
+                <div>
+                    <label for="correo">Email</label>
+                    <input type="email" id="correo" formControlName="correo">
+                </div>
+                <div>
+                    <label for="profesion">Profesión</label>
+                    <input type="text" id="profesion" formControlName="profesion">
+                </div>
+                <div>
+                    <label for="urlFoto">Foto Perfil</label>
+                    <input type="file" id="urlFoto" formControlName="urlFoto">
+                </div>
+                <div class="centrar">
+                    <button [disabled]="personaForm.invalid" type="submit" class="boton">Guardar</button>
+                    <button (click)="cerrarModal()" class="boton">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
