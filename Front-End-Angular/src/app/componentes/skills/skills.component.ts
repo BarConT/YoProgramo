@@ -94,4 +94,36 @@ export class SkillsComponent implements OnInit {
     this.modal = false;
   }
 
+  bajar(index: number) {
+
+    if (index<this.tecnologiasLista.length-1)  {
+      let tecnologia1: Tecnologia = this.tecnologiasLista[index];
+      let tecnologia2: Tecnologia = this.tecnologiasLista[index+1];
+  
+      [tecnologia1.nombre, tecnologia2.nombre] = [tecnologia2.nombre, tecnologia1.nombre];
+      [tecnologia1.nivel, tecnologia2.nivel] = [tecnologia2.nivel, tecnologia1.nivel];
+      
+      this.datosPortfolio.modificarTecnologia(tecnologia1).subscribe();
+      this.datosPortfolio.modificarTecnologia(tecnologia2).subscribe();
+  
+    }
+
+  }
+
+  subir(index: number) {
+
+    if (index>0) {
+      let tecnologia1: Tecnologia = this.tecnologiasLista[index];
+      let tecnologia2: Tecnologia = this.tecnologiasLista[index-1];
+
+      [tecnologia1.nombre, tecnologia2.nombre] = [tecnologia2.nombre, tecnologia1.nombre];
+      [tecnologia1.nivel, tecnologia2.nivel] = [tecnologia2.nivel, tecnologia1.nivel];
+      
+
+      this.datosPortfolio.modificarTecnologia(tecnologia1).subscribe();
+      this.datosPortfolio.modificarTecnologia(tecnologia2).subscribe();
+    }  
+
+  }
+
 }

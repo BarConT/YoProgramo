@@ -5,6 +5,7 @@
 .barra {
     width: 90%;
     height: 1.5rem;
+    margin-top: 0.5rem;
     border-radius: 20px;
     -webkit-appearance: none;
     -moz-appearance: none;

@@ -98,4 +98,37 @@ export class EducacionComponent implements OnInit {
     this.modal = false;
   }
 
+  bajar(index: number) {
+
+    if (index<this.educacionLista.length-1)  {
+      let educacion1: Educacion = this.educacionLista[index];
+      let educacion2: Educacion = this.educacionLista[index+1];
+  
+      [educacion1.instituto, educacion2.instituto] = [educacion2.instituto, educacion1.instituto];
+      [educacion1.titulo, educacion2.titulo] = [educacion2.titulo, educacion1.titulo];
+      [educacion1.periodo, educacion2.periodo] = [educacion2.periodo, educacion1.periodo];
+  
+      this.datosPortfolio.modificarEducacion(educacion1).subscribe();
+      this.datosPortfolio.modificarEducacion(educacion2).subscribe();
+  
+    }
+
+  }
+
+  subir(index: number) {
+
+    if (index>0) {
+      let educacion1: Educacion = this.educacionLista[index];
+      let educacion2: Educacion = this.educacionLista[index-1];
+
+      [educacion1.instituto, educacion2.instituto] = [educacion2.instituto, educacion1.instituto];
+      [educacion1.titulo, educacion2.titulo] = [educacion2.titulo, educacion1.titulo];
+      [educacion1.periodo, educacion2.periodo] = [educacion2.periodo, educacion1.periodo];
+
+      this.datosPortfolio.modificarEducacion(educacion1).subscribe();
+      this.datosPortfolio.modificarEducacion(educacion2).subscribe();
+    }  
+
+  }
+
 }

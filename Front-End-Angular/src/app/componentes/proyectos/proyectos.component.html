@@ -8,6 +8,8 @@
             <li *ngFor="let proyecto of proyectosLista; let i = index">
                 <div class="contenido">
                     <div *ngIf="isUserLogged" class="botones">
+                        <i (click)="bajar(i)" class="fa fa-arrow-down"></i> 
+                        <i (click)="subir(i)" class="fa fa-arrow-up"></i>
                         <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
                         <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
                     </div>

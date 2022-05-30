@@ -103,4 +103,41 @@ export class ExperienciaComponent implements OnInit {
     this.modal = false;
   }
 
+  bajar(index: number) {
+
+    if (index<this.experienciaLista.length-1)  {
+      let experiencia1: Experiencia = this.experienciaLista[index];
+      let experiencia2: Experiencia = this.experienciaLista[index+1];
+  
+      [experiencia1.nombreEmpresa, experiencia2.nombreEmpresa] = [experiencia2.nombreEmpresa, experiencia1.nombreEmpresa];
+      [experiencia1.fechaInicio, experiencia2.fechaInicio] = [experiencia2.fechaInicio, experiencia1.fechaInicio];
+      [experiencia1.fechaFin, experiencia2.fechaFin] = [experiencia2.fechaFin, experiencia1.fechaFin];
+      [experiencia1.descripcion, experiencia2.descripcion] = [experiencia2.descripcion, experiencia1.descripcion];
+      [experiencia1.tipoEmpleo, experiencia2.tipoEmpleo] = [experiencia2.tipoEmpleo, experiencia1.tipoEmpleo];
+  
+      this.datosPortfolio.modificarExperiencia(experiencia1).subscribe();
+      this.datosPortfolio.modificarExperiencia(experiencia2).subscribe();
+  
+    }
+
+  }
+
+  subir(index: number) {
+
+    if (index>0) {
+      let experiencia1: Experiencia = this.experienciaLista[index];
+      let experiencia2: Experiencia = this.experienciaLista[index-1];
+
+      [experiencia1.nombreEmpresa, experiencia2.nombreEmpresa] = [experiencia2.nombreEmpresa, experiencia1.nombreEmpresa];
+      [experiencia1.fechaInicio, experiencia2.fechaInicio] = [experiencia2.fechaInicio, experiencia1.fechaInicio];
+      [experiencia1.fechaFin, experiencia2.fechaFin] = [experiencia2.fechaFin, experiencia1.fechaFin];
+      [experiencia1.descripcion, experiencia2.descripcion] = [experiencia2.descripcion, experiencia1.descripcion];
+      [experiencia1.tipoEmpleo, experiencia2.tipoEmpleo] = [experiencia2.tipoEmpleo, experiencia1.tipoEmpleo];
+
+      this.datosPortfolio.modificarExperiencia(experiencia1).subscribe();
+      this.datosPortfolio.modificarExperiencia(experiencia2).subscribe();
+    }  
+
+  }
+
 }

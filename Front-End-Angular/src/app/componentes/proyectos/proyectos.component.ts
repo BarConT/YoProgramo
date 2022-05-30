@@ -100,8 +100,39 @@ export class ProyectosComponent implements OnInit {
     this.modal = false;
   }
 
-  // get Nombre() {
-  //   return this.proyectosForm.get('nombre');
-  // }
+  bajar(index: number) {
+
+    if (index<this.proyectosLista.length-1)  {
+      let proyecto1: Proyecto = this.proyectosLista[index];
+      let proyecto2: Proyecto = this.proyectosLista[index+1];
+  
+      [proyecto1.nombre, proyecto2.nombre] = [proyecto2.nombre, proyecto1.nombre];
+      [proyecto1.descripcion, proyecto2.descripcion] = [proyecto2.descripcion, proyecto1.descripcion];
+      [proyecto1.fecha, proyecto2.fecha] = [proyecto2.fecha, proyecto1.fecha];
+      [proyecto1.link, proyecto2.link] = [proyecto2.link, proyecto1.link];
+  
+      this.datosPortfolio.modificarProyecto(proyecto1).subscribe();
+      this.datosPortfolio.modificarProyecto(proyecto2).subscribe();
+  
+    }
+
+  }
+
+  subir(index: number) {
+
+    if (index>0) {
+      let proyecto1: Proyecto = this.proyectosLista[index];
+      let proyecto2: Proyecto = this.proyectosLista[index-1];
+
+      [proyecto1.nombre, proyecto2.nombre] = [proyecto2.nombre, proyecto1.nombre];
+      [proyecto1.descripcion, proyecto2.descripcion] = [proyecto2.descripcion, proyecto1.descripcion];
+      [proyecto1.fecha, proyecto2.fecha] = [proyecto2.fecha, proyecto1.fecha];
+      [proyecto1.link, proyecto2.link] = [proyecto2.link, proyecto1.link];
+
+      this.datosPortfolio.modificarProyecto(proyecto1).subscribe();
+      this.datosPortfolio.modificarProyecto(proyecto2).subscribe();
+    }  
+
+  }
 
 }
