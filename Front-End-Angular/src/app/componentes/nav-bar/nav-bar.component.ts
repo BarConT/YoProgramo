@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicios/auth.service';
 
@@ -7,15 +7,18 @@ import { AuthService } from 'src/app/servicios/auth.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, DoCheck {
 
   isUserLogged: boolean = false;
 
   constructor(private authService: AuthService,
-    private router: Router) { }
+              private router: Router) { }
+
+  ngDoCheck(): void {
+    this.isUserLogged = this.authService.isUserLogged();;
+  }
 
   ngOnInit(): void {
-    this.isUserLogged = this.authService.isUserLogged();
   }
 
   logout(): void {

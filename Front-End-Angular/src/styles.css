@@ -9,6 +9,10 @@ li {
     list-style: none;
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
 .contenedor {
     background-color: #F2F2F2;
     padding: 1rem;

@@ -15,14 +15,15 @@ export class AuthService {
   public login(credenciales: LoginDto): Observable<Boolean> {
     return this.http.post<Boolean>(config.baseUrl + "login", credenciales).pipe(
       tap((data: Boolean) => {
-        sessionStorage.setItem("user", "admin");
+        if (data) {
+          sessionStorage.setItem("user", "admin");
+        }  
       })
     );
   }
 
   public logout(): void {
     sessionStorage.removeItem("user");
-    window.location.reload(); // VER
   }
 
   public isUserLogged(): boolean {
