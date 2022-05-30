@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  isUserLogged: boolean = false;
   errorLogin: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.isUserLogged = this.authService.isUserLogged();
   }
 
   get Usuario() {

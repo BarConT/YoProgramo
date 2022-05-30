@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/servicios/auth.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { Experiencia } from '../../data/Experiencia';
 
 @Component({
@@ -18,7 +18,7 @@ export class ExperienciaComponent implements OnInit {
   tituloModal: string = "";
   experienciaForm: FormGroup;
 
-  constructor(private datosPortfolio:PortfolioService,
+  constructor(private datosPortfolio:ExperienciaService,
               private authService:AuthService,
               private formBuilder: FormBuilder) {
                 this.experienciaForm = this.formBuilder.group({

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/servicios/auth.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { Persona } from 'src/app/data/Persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   tituloModal: string = "";
   personaForm: FormGroup;
 
-  constructor(private datosPortfolio:PortfolioService,
+  constructor(private datosPortfolio:PersonaService,
               private authService:AuthService,
               private formBuilder: FormBuilder) {
                 this.personaForm = this.formBuilder.group({

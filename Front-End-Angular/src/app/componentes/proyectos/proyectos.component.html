@@ -8,15 +8,15 @@
             <li *ngFor="let proyecto of proyectosLista; let i = index">
                 <div class="contenido">
                     <div *ngIf="isUserLogged" class="botones">
-                        <i (click)="bajar(i)" class="fa fa-arrow-down"></i> 
-                        <i (click)="subir(i)" class="fa fa-arrow-up"></i>
+                        <i (click)="bajar(i)" class="fa fa-arrow-down" [ngStyle]="{backgroundColor: i==proyectosLista.length-1? '#F2F2F2':''}"></i> 
+                        <i (click)="subir(i)" class="fa fa-arrow-up" [ngStyle]="{backgroundColor: i==0? '#F2F2F2':''}"></i>
                         <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
                         <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
                     </div>
-                    <h3>{{ proyecto.nombre }}</h3>
-                    <p>{{ proyecto.descripcion }}</p>
-                    <p>{{ proyecto.fecha }}</p>
-                    <a href="{{ proyecto.link }}">Enlace</a>
+                    <h2>{{ proyecto.nombre }}</h2>
+                    <h3>{{ proyecto.descripcion }}</h3>
+                    <h3>{{ proyecto.fecha }}</h3>
+                    <a href="{{ proyecto.link }}">Enlace a {{ proyecto.nombre }}</a>
                 </div>
             </li>
         </div>

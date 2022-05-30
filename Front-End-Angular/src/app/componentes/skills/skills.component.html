@@ -8,13 +8,13 @@
             <li *ngFor="let tecnologia of tecnologiasLista; let i = index">
                 <div class="contenido">
                     <div *ngIf="isUserLogged" class="botones">
-                        <i (click)="bajar(i)"class="fa fa-arrow-down"></i> 
-                        <i (click)="subir(i)" class="fa fa-arrow-up"></i>
+                        <i (click)="bajar(i)"class="fa fa-arrow-down" [ngStyle]="{backgroundColor: i==tecnologiasLista.length-1? '#F2F2F2':''}"></i> 
+                        <i (click)="subir(i)" class="fa fa-arrow-up" [ngStyle]="{backgroundColor: i==0? '#F2F2F2':''}"></i>
                         <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
                         <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
                     </div>
                     <div class="contenedorBarras">
-                        <h3>{{ tecnologia.nombre }}:</h3>
+                        <h2>{{ tecnologia.nombre }}</h2>
                         <progress class="barra" max="100" value="{{ tecnologia.nivel }}"></progress>
                     </div>
                 </div>  
@@ -38,7 +38,7 @@
                 <input type="hidden" name="id">
                 <div>
                     <label for="nombre">Tecnología</label>
-                    <input type="text" id="nombre" formControlName="nombre"  maxlength="100">
+                    <input type="text" id="nombre" formControlName="nombre"  maxlength="80">
                 </div>
                 <div>
                     <label for="nivel">Nivel</label>

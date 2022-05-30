@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/servicios/auth.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { TecnologiaService } from 'src/app/servicios/tecnologia.service';
 import { Tecnologia } from '../../data/Tecnologia';
 
 @Component({
@@ -18,7 +18,7 @@ export class SkillsComponent implements OnInit {
   tituloModal: string = "";
   tecnologiaForm: FormGroup;
 
-  constructor(private datosPortfolio:PortfolioService,
+  constructor(private datosPortfolio:TecnologiaService,
               private authService:AuthService,
               private formBuilder: FormBuilder) { 
                 this.tecnologiaForm = this.formBuilder.group({

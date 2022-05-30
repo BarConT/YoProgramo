@@ -11,9 +11,9 @@
             <img class="fotoPerfil" src="../../../assets/img/BarConT.jpeg" alt="Foto perfil">
             <div *ngIf="personaLista.length>0">
                 <h2 class="tituloNombre">{{ personaLista[0]?.nombre}} {{ personaLista[0]?.apellido }}</h2>
-                <p class="tituloSecundario">{{ personaLista[0]?.profesion }}</p>
-                <p>{{ personaLista[0]?.correo }}</p>
-                <p>{{ personaLista[0]?.domicilio }}</p>
+                <h2 class="tituloSecundario">{{ personaLista[0]?.profesion }}</h2>
+                <h3>{{ personaLista[0]?.correo }}</h3>
+                <h3>{{ personaLista[0]?.domicilio }}</h3>
             </div>
             <div *ngIf="personaLista.length==0">
                 <h3>Agrega los datos personales</h3>

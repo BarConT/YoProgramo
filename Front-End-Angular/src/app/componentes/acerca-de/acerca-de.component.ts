@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/servicios/auth.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { AcercaDe } from 'src/app/data/AcercaDe';
+import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -18,7 +18,7 @@ export class AcercaDeComponent implements OnInit {
   tituloModal: string = "";
   acercaDeForm: FormGroup;
 
-  constructor(private datosPortfolio:PortfolioService,
+  constructor(private datosPortfolio:AcercaDeService,
               private authService:AuthService,
               private formBuilder: FormBuilder) { 
                 this.acercaDeForm = this.formBuilder.group({

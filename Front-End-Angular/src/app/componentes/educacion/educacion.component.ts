@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from 'src/app/servicios/auth.service';
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 import { Educacion } from '../../data/Educacion';
 
 @Component({
@@ -19,7 +19,7 @@ export class EducacionComponent implements OnInit {
   educacionForm: FormGroup;
 
   constructor(
-    private datosPortfolio:PortfolioService,
+    private datosPortfolio:EducacionService,
     private authService:AuthService,
     private formBuilder: FormBuilder) {
       this.educacionForm = this.formBuilder.group({
