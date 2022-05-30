@@ -4,18 +4,23 @@
         <div *ngIf="isUserLogged" class="botones">
             <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
         </div>
-        <li *ngFor="let proyecto of proyectosLista; let i = index">
-            <div class="contenido">
-                <div *ngIf="isUserLogged" class="botones">
-                    <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
-                    <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+        <div *ngIf="proyectosLista.length>0">
+            <li *ngFor="let proyecto of proyectosLista; let i = index">
+                <div class="contenido">
+                    <div *ngIf="isUserLogged" class="botones">
+                        <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
+                        <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+                    </div>
+                    <h3>{{ proyecto.nombre }}</h3>
+                    <p>{{ proyecto.descripcion }}</p>
+                    <p>{{ proyecto.fecha }}</p>
+                    <a href="{{ proyecto.link }}">Enlace</a>
                 </div>
-                <h3>{{ proyecto.nombre }}</h3>
-                <p>{{ proyecto.descripcion }}</p>
-                <p>{{ proyecto.fecha }}</p>
-                <a href="{{ proyecto.link }}">Enlace</a>
-            </div>
-        </li>    
+            </li>
+        </div>
+        <div *ngIf="proyectosLista.length==0" class="contenido">
+            <h3>Agrega un nuevo Proyecto</h3>
+        </div>
     </div>
 </div>
 

@@ -4,17 +4,23 @@
         <div *ngIf="isUserLogged" class="botones">
             <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
         </div>
-        <li *ngFor="let educacion of educacionLista; let i = index">
-            <div class="contenido">
-                <div *ngIf="isUserLogged" class="botones">
-                    <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
-                    <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
-                </div>     
-                <h3>{{ educacion.instituto }}</h3>
-                <p>{{ educacion.titulo }}</p>
-                <p>{{ educacion.periodo }}</p>    
-            </div>
-        </li>   
+        <div *ngIf="educacionLista.length>0">
+            <li *ngFor="let educacion of educacionLista; let i = index">
+                <div class="contenido">
+                    <div *ngIf="isUserLogged" class="botones">
+                        <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
+                        <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+                    </div>     
+                    <h3>{{ educacion.instituto }}</h3>
+                    <p>{{ educacion.titulo }}</p>
+                    <p>{{ educacion.periodo }}</p>    
+                </div>
+            </li>
+        </div>
+        <div *ngIf="educacionLista.length==0" class="contenido">
+            <h3>Agrega una nueva Educación</h3>
+        </div>
+           
     </div>
 </div>
 

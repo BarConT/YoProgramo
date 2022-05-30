@@ -24,6 +24,9 @@
                     </p>
                 </div>
             </div>
+            <div *ngIf="errorLogin">
+                <h3 class="centrar error">El usuario o la contraseña son incorrectos</h3>
+            </div>
             <div class="centrar">
                 <button [disabled]="form.invalid" type="submit" class="boton">Iniciar sesión</button>
                 <button routerLink="/home" class="boton">Cancelar</button>

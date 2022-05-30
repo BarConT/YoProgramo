@@ -26,7 +26,8 @@ export class HeaderComponent implements OnInit {
                   nombre: ['', [Validators.required]],
                   apellido: ['', [Validators.required]],
                   correo: ['', [Validators.required]],
-                  profesion: ['', [Validators.required]]
+                  profesion: ['', [Validators.required]],
+                  domicilio: ['', [Validators.required]]
                 })
                }
 
@@ -46,6 +47,7 @@ export class HeaderComponent implements OnInit {
       apellido: persona.apellido,
       correo: persona.correo,
       profesion: persona.profesion,
+      domicilio: persona.domicilio
     });
   }
 
@@ -56,6 +58,7 @@ export class HeaderComponent implements OnInit {
       apellido: '',
       correo: '',
       profesion: '',
+      domicilio: ''
     });
   }
 
@@ -80,7 +83,6 @@ export class HeaderComponent implements OnInit {
     }
   
     abrirModalEditar(index: number) {
-      console.log(index)
       this.tituloModal = "Editar Persona";
       this.limpiarForm();
       this.modal = true;

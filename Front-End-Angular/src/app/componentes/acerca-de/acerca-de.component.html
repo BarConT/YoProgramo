@@ -5,8 +5,11 @@
             <i *ngIf="acercaDeLista.length>=1" (click)="abrirModalEditar(0)" class="fa fa-pen"></i>            
         </div>
         <h2 class="titulo">Acerca de</h2>
-        <div class="contenido">
+        <div *ngIf="acercaDeLista.length>0" class="contenido">
             <p>{{ acercaDeLista[0]?.descripcion}}</p> 
+        </div>
+        <div *ngIf="acercaDeLista.length==0" class="contenido">
+            <h3>Agrega información sobre ti</h3>
         </div>
     </div>
 </div>

@@ -23,8 +23,8 @@ public class AuthController {
         return authService.isUserEnabled(userDto);
     }
     
-    @PostMapping ("/register")
-    public void register(@RequestBody Usuario usuario) throws Exception{
-        authService.crearUsuario(usuario);
-    }
+//    @PostMapping ("/register")
+//    public void register(@RequestBody Usuario usuario) throws Exception{
+//        authService.crearUsuario(usuario);
+//    }
 }

@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  errorLogin: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
@@ -39,8 +40,11 @@ export class LoginComponent implements OnInit {
     event.preventDefault;
     this.authService.login(this.form.value).subscribe(
       (response: Boolean) => {
-        if (response) 
-        this.router.navigate(['/home']);
+        if (response) {
+          this.router.navigate(['/home']);
+        } else {
+          this.errorLogin = true;
+        }
       }
     );
   }

@@ -1,20 +1,25 @@
 <div class="experiencia">
     <div class="contenedor">
-            <h2 class="titulo">Experiencia</h2> 
-            <div *ngIf="isUserLogged" class="botones">
-                <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
-            </div>
-        <li *ngFor="let experiencia of experienciaLista; let i = index">
-            <div class="contenido">
-                <div *ngIf="isUserLogged" class="botones">
-                    <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
-                    <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+        <h2 class="titulo">Experiencia</h2> 
+        <div *ngIf="isUserLogged" class="botones">
+            <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
+        </div>
+        <div *ngIf="experienciaLista.length>0">
+            <li *ngFor="let experiencia of experienciaLista; let i = index">
+                <div class="contenido">
+                    <div *ngIf="isUserLogged" class="botones">
+                        <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
+                        <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+                    </div>
+                    <h3>{{ experiencia.descripcion }}</h3>  
+                    <p>{{ experiencia.nombreEmpresa }} - {{ experiencia.tipoEmpleo }}</p>
+                    <p><time>{{ experiencia.fechaInicio }}</time> - <time>{{ experiencia.fechaFin }}</time></p>
                 </div>
-                <h3>{{ experiencia.descripcion }}</h3>  
-                <p>{{ experiencia.nombreEmpresa }} - {{ experiencia.tipoEmpleo }}</p>
-                <p><time>{{ experiencia.fechaInicio }}</time> - <time>{{ experiencia.fechaFin }}</time></p>
-            </div>
-        </li>    
+            </li>  
+        </div>
+        <div *ngIf="experienciaLista.length==0" class="contenido">
+            <h3>Agrega una nueva Experiencia</h3>
+        </div>
     </div>
 </div>
 

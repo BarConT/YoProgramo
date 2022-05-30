@@ -4,18 +4,23 @@
         <div *ngIf="isUserLogged" class="botones">
             <i (click)="abrirModalNuevo()" class="fa fa-plus"></i>  
         </div>
-        <li *ngFor="let tecnologia of tecnologiasLista; let i = index">
-            <div class="contenido">
-                <div *ngIf="isUserLogged" class="botones">
-                    <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
-                    <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
-                </div>
-                <div class="contenedorBarras">
-                    <h3>{{ tecnologia.nombre }}:</h3>
-                    <progress class="barra" max="100" value="{{ tecnologia.nivel }}"></progress>
-                </div>
-            </div>  
-        </li>
+        <div *ngIf="tecnologiasLista?.length>0">
+            <li *ngFor="let tecnologia of tecnologiasLista; let i = index">
+                <div class="contenido">
+                    <div *ngIf="isUserLogged" class="botones">
+                        <i (click)="abrirModalEditar(i)" class="fa fa-pen"></i>  
+                        <i (click)="abrirModalEliminar(i)" class="fa fa-trash"></i> 
+                    </div>
+                    <div class="contenedorBarras">
+                        <h3>{{ tecnologia.nombre }}:</h3>
+                        <progress class="barra" max="100" value="{{ tecnologia.nivel }}"></progress>
+                    </div>
+                </div>  
+            </li>
+        </div>
+        <div *ngIf="tecnologiasLista?.length==0" class="contenido">
+            <h3>Agrega una nueva Tecnología</h3>
+        </div>
     </div>
 </div>
 

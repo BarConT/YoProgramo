@@ -63,6 +63,11 @@ a:link, a:visited, a:active {
     margin: 5px 5px 20px 0;
 }
 
+.error {
+    color: red;
+    font-size: 1.5rem;
+}
+
 /* ICONOS */
 
 .botones {
