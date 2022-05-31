@@ -16,6 +16,7 @@ import { LoginComponent } from './componentes/auth/login/login.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { PaginaErrorComponent } from './componentes/pagina-error/pagina-error.component';
 
+
 const routes: Routes = [
   { path: 'home', component: PortfolioComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

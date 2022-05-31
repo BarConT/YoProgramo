@@ -15,43 +15,15 @@ CREATE SCHEMA IF NOT EXISTS `Portfolio` DEFAULT CHARACTER SET utf8 ;
 USE `Portfolio` ;
 
 -- -----------------------------------------------------
--- Table `Portfolio`.`usuarios`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Portfolio`.`usuarios` (
-  `id` INT NOT NULL,
-  `usuario` VARCHAR(45) NULL,
-  `contrasenia` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `Portfolio`.`persona`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Portfolio`.`persona` (
   `id` INT NOT NULL,
-  `nombre` VARCHAR(45) NULL,
-  `apellido` VARCHAR(45) NULL,
-  `correo` VARCHAR(45) NULL,
+  `nombre` VARCHAR(50) NULL,
+  `apellido` VARCHAR(50) NULL,
+  `correo` VARCHAR(100) NULL,
   `profesion` VARCHAR(100) NULL,
-  `url_foto` VARCHAR(100) NULL,
-  `usuarios_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `usuarios_id`),
-  INDEX `fk_persona_usuarios1_idx` (`usuarios_id` ASC) VISIBLE,
-  CONSTRAINT `fk_persona_usuarios1`
-    FOREIGN KEY (`usuarios_id`)
-    REFERENCES `Portfolio`.`usuarios` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Portfolio`.`tipo_empleo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Portfolio`.`tipo_empleo` (
-  `id` INT NOT NULL,
-  `nombre_tipo` VARCHAR(45) NULL,
+  `domicilio` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -62,26 +34,11 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Portfolio`.`experiencia_laboral` (
   `id` INT NOT NULL,
   `nombreEmpresa` VARCHAR(45) NULL,
-  `esTrabajoActual` TINYINT NULL,
-  `fechaInicio` DATE NULL,
-  `fechaFin` DATE NULL,
+  `fechaInicio` VARCHAR(100) NULL,
+  `fechaFin` VARCHAR(100) NULL,
   `descripcion` VARCHAR(200) NULL,
-  `url_logo` VARCHAR(100) NULL,
-  `persona_id` INT NOT NULL,
-  `tipo_empleo_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `persona_id`, `tipo_empleo_id`),
-  INDEX `fk_experiencia_laboral_persona_idx` (`persona_id` ASC) VISIBLE,
-  INDEX `fk_experiencia_laboral_tipo_empleo1_idx` (`tipo_empleo_id` ASC) VISIBLE,
-  CONSTRAINT `fk_experiencia_laboral_persona`
-    FOREIGN KEY (`persona_id`)
-    REFERENCES `Portfolio`.`persona` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_experiencia_laboral_tipo_empleo1`
-    FOREIGN KEY (`tipo_empleo_id`)
-    REFERENCES `Portfolio`.`tipo_empleo` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `tipoEmpleo` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -93,53 +50,44 @@ CREATE TABLE IF NOT EXISTS `Portfolio`.`educacion` (
   `instituto` VARCHAR(45) NULL,
   `titulo` VARCHAR(100) NULL,
   `periodo` VARCHAR(45) NULL,
-  `url_logo` VARCHAR(100) NULL,
-  `persona_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `persona_id`),
-  INDEX `fk_educacion_persona1_idx` (`persona_id` ASC) VISIBLE,
-  CONSTRAINT `fk_educacion_persona1`
-    FOREIGN KEY (`persona_id`)
-    REFERENCES `Portfolio`.`persona` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Portfolio`.`tecnologias`
+-- Table `Portfolio`.`tecnologia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Portfolio`.`tecnologias` (
+CREATE TABLE IF NOT EXISTS `Portfolio`.`tecnologia` (
   `id` INT NOT NULL,
   `nombre` VARCHAR(45) NULL,
   `nivel` INT NULL,
-  `persona_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `persona_id`),
-  INDEX `fk_tecnologias_persona1_idx` (`persona_id` ASC) VISIBLE,
-  CONSTRAINT `fk_tecnologias_persona1`
-    FOREIGN KEY (`persona_id`)
-    REFERENCES `Portfolio`.`persona` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Portfolio`.`proyectos`
+-- Table `Portfolio`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Portfolio`.`proyectos` (
+CREATE TABLE IF NOT EXISTS `Portfolio`.`usuario` (
+  `id` INT ZEROFILL NOT NULL,
+  `usuario` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `email` VARCHAR(100) NULL,
+  `isEnabled` TINYINT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Portfolio`.`proyecto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Portfolio`.`proyecto` (
   `id` INT NOT NULL,
   `nombre` VARCHAR(100) NULL,
   `fecha` VARCHAR(45) NULL,
   `descripcion` VARCHAR(200) NULL,
   `link` VARCHAR(200) NULL,
-  `persona_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `persona_id`),
-  INDEX `fk_proyectos_persona1_idx` (`persona_id` ASC) VISIBLE,
-  CONSTRAINT `fk_proyectos_persona1`
-    FOREIGN KEY (`persona_id`)
-    REFERENCES `Portfolio`.`persona` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -149,14 +97,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Portfolio`.`acerca_de` (
   `id` INT NOT NULL,
   `descripcion` VARCHAR(200) NULL,
-  `persona_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `persona_id`),
-  INDEX `fk_acerca_de_persona1_idx` (`persona_id` ASC) VISIBLE,
-  CONSTRAINT `fk_acerca_de_persona1`
-    FOREIGN KEY (`persona_id`)
-    REFERENCES `Portfolio`.`persona` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
